@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tipe input</title>
+    <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div class="uji-coba">
+        <h3>Uji coba 1</h3>
+        <label for="username"> type "text" :</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="pwd">type "password"</label><br>
+        <input type="password" id="pwd" name="pwd"><br>
+        <p><strong>Kesimpulan:</strong> Type="text" digunakan untuk input teks biasa yang dapat dilihat oleh pengguna, sedangkan type="password" menyembunyikan karakter yang diketik sehingga lebih aman untuk input kata sandi.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 2</h3>
+        <input type="radio" id="html"       value="HTML">  <label for="html">HTML</label><br>
+        <input type="radio" id="css"        value="CSS">   <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" value="JavaScript"> <label for="javascript">JavaScript</label>
+        <p><strong>Kesimpulan:</strong> Dengan atribut "name" yang sama pada semua radio button, pengguna hanya dapat memilih satu opsi karena termasuk dalam grup yang sama. Jika "name" berbeda, setiap radio button dapat dipilih secara bersamaan karena dianggap sebagai grup terpisah.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 3</h3>
+        <input type="checkbox" id="id1" value="Bike">
+        <label for="id1"> I have a bike</label><br>
+        <input type="checkbox" id="id2" value="Car">
+        <label for="id2"> I have a car</label><br>
+        <input type="checkbox" id="id3" value="Boat">
+        <label for="id3"> I have a boat</label>
+        <p><strong>Kesimpulan:</strong> Checkbox dengan "name" yang sama memungkinkan pengguna memilih lebih dari satu opsi karena data akan dikirim sebagai array. Jika "name" berbeda, setiap checkbox dianggap sebagai field terpisah.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 4</h3>
+        <label for="favcolor">Pilih Warna dengan type="color":</label>
+        <input type="color" id="favcolor" name="favcolor"><br>
+        <label for="b">Pilih tanggal dengan type="date":</label>
+        <input type="date" id="b" name="tanggal"><br>
+        <input type="button" onclick="alert('Hello World!')" value="Click Me!"><br>
+        <p><strong>Kesimpulan:</strong> Type="color" menampilkan color picker, type="date" menampilkan kalender, dan type="button" menampilkan tombol yang dapat diprogram dengan JavaScript.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 5</h3>
+        <label for="birthdaytime">input dengan type datetime-local:</label>
+        <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br>
+        <label for="bdaymonth">input dengan type month:</label>
+        <input type="month" id="bdaymonth" name="bdaymonth"><br>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email"><br>
+        <p><strong>Kesimpulan:</strong> Type datetime-local menampilkan input tanggal dan waktu, type month menampilkan bulan dan tahun, type email melakukan validasi format email otomatis. Tampilan dapat berbeda antar browser.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 6</h3>
+        <input type="image" src="up.png" alt="Submit" width="48" height="48"><br>
+        <label for="myfile">Pilih file:</label>
+        <input type="file" id="myfile" name="myfile"><br>
+        <input type="hidden" id="custId" name="custId" value="3487"><br>
+        <p><strong>Kesimpulan:</strong> Type="image" berfungsi sebagai tombol submit dengan gambar, type="file" membuka dialog pemilihan file, type="hidden" menyimpan data yang tidak terlihat oleh pengguna.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 7</h3>
+        <label for="quantity">Quantity (between 1 and 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10"><br>
+        <label for="vol">Volume (between 0 and 50):</label>
+        <input type="range" id="vol" name="vol" min="0" max="50"><br>
+        <p><strong>Kesimpulan:</strong> Type="number" membatasi input hanya angka dengan tombol increment/decrement. Type="range" menampilkan slider. Jika min diubah menjadi -50, input number menerima nilai negatif tergantung browser, range akan menyesuaikan rentang slider.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 8</h3>
+        <label for="homepage">Add your homepage:</label>
+        <input type="url" id="homepage" name="homepage"><br>
+        <label for="gsearch">Search Google:</label>
+        <input type="search" id="gsearch" name="gsearch"><br>
+        <label for="ph">Enter your phone number:</label>
+        <input type="tel" id="ph" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
+        <p><strong>Kesimpulan:</strong> Type="url" memvalidasi format URL, type="search" menyediakan kotak pencarian dengan tombol hapus, type="tel" tidak melakukan validasi otomatis namun dapat dikombinasikan dengan atribut pattern untuk validasi format.</p>
+    </div>
+
+    <hr>
+    <div class="uji-coba">
+        <h3>Uji coba 9</h3>
+        <label for="appt">Select a time:</label>
+        <input type="time" id="appt" name="appt"><br>
+        <label for="week">Select a week:</label>
+        <input type="week" id="week" name="week"><br>
+        <p><strong>Kesimpulan:</strong> Type="time" menampilkan input waktu (jam dan menit), type="week" menampilkan minggu dalam setahun. Format tampilan dapat bervariasi antar browser.</p>
+    </div>
+
+</body>
+</html>

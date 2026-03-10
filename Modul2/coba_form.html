@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Sederhana</title>
+    <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+</head>
+<body>
+    <h1>FORM SEDERHANA</h1>
+    
+    <form action="/action_page.php" method="get" target="_self">
+        <label for="depan">Nama depan:</label><br>
+        <input type="text" id="depan" name="i_name" value="Reva"><br>
+        <label for="n_belakang">Nama Belakang:</label><br>
+        <input type="text" id="n_belakang" name="i_belakang" value="Cantikkkk"><br>
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+    </form>
+    
+    <p>Jika Anda mengklik tombol "Kirim", data formulir akan dikirim ke halaman bernama "/action_page.php".</p>
+    
+    <p><strong>Kesimpulan Ujicoba:</strong><br>
+    - Tombol Reset mengembalikan form ke nilai awal (Reva Cantikkkk)<br>
+    - Tombol Kirim mengirim data ke action_page.php<br>
+    - Atribut target="_self" membuka hasil di tab yang sama, "_blank" membuka di tab baru<br>
+    - Method="get" mengirim data melalui URL (terlihat di address bar), method="post" mengirim melalui body HTTP (tidak terlihat)<br>
+    - GET cocok untuk request data, POST untuk mengirim data sensitif atau dalam jumlah besar</p>
+</body>
+</html>
