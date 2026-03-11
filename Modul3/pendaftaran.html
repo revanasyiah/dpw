@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Pendaftaran</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Reva Adinta Nasyiah">
+    <meta name="nim" content="253307010">
+    <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; }
+        header {
+            background-color: #7f5399;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding: 20px;
+        }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li a { text-decoration: none; color: #333; }
+        nav ul li a:hover { text-decoration: underline; }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 300px;
+        }
+        section::after { content: ""; display: table; clear: both; }
+        footer {
+            background-color: #2db1a6;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            nav, article { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header><h2>Website Pendaftaran</h2></header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gambar.html">Gambar</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="svg.html">SVG</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h1>Form Penjadwal Pertemuan</h1>
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Informasi Pribadi</legend>
+                    <div class="form-row">
+                        <label>Nama</label>
+                        <input type="text" name="nama" required>
+                    </div>
+                    <div class="form-row">
+                        <label>No. Telepon</label>
+                        <input type="tel" name="telepon"
+                               pattern="\d{4}-\d{6}"
+                               placeholder="0812-345678"
+                               title="Format: XXXX-XXXXXX"
+                               required>
+                    </div>
+                    <div class="form-row">
+                        <label>Alamat Email</label>
+                        <input type="email" name="email"
+                               placeholder="nama@domain.com" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" name="tgl_lahir"
+                               min="1987-01-01" max="1993-01-01" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Permintaan Pertemuan</legend>
+                    <div class="form-row">
+                        <label>Tujuan Pertemuan</label>
+                        <input type="text" name="tujuan" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Tingkat Kepentingan Pertemuan</label>
+                        <input type="range" name="kepentingan"
+                               min="0" max="10" value="5"
+                               oninput="document.getElementById('nilai').textContent = this.value">
+                        <span id="nilai">5</span>
+                        <br><small>0 = Tidak Penting | 10 = Mendesak</small>
+                    </div>
+                    <div class="form-row">
+                        <label>Tanggal</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Waktu</label>
+                        <input type="time" name="waktu"
+                               min="17:00" max="21:00" required>
+                        <br><small>17.00 - 21.00 WIB</small>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Submit">
+            </form>
+            <p><strong>NIM:</strong> 253307010 | <strong>Nama:</strong> Reva Adinta Nasyiah</p>
+        </article>
+    </section>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <footer><p>copyright@reva466 2026</p></footer>
+    <script> 
+        var today = new Date();
+        today.setDate(today.getDate() + 1);
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+        document.getElementById('tanggal').min = yyyy + '-' + mm + '-' + dd;
+    </script>
+</body>
+</html>

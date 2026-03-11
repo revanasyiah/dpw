@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Event</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Reva Adinta Nasyiah">
+    <meta name="nim" content="253307010">
+    <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; }
+        header {
+            background-color: #7f5399;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding: 20px;
+        }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li a { text-decoration: none; color: #333; }
+        nav ul li a:hover { text-decoration: underline; }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 300px;
+        }
+        section::after { content: ""; display: table; clear: both; }
+        footer {
+            background-color: #2db1a6;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            nav, article { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header><h2>Website Gambar dengan Mouse Event</h2></header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gambar.html">Gambar</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="svg.html">SVG</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h1>Gambar dengan Mouse Event</h1>
+            <div id="info-box">Hover pada gambar untuk info...</div>
+            <div class="gallery">
+                <img src="kimi.png" alt="Kimi Antonelli" width="130" height="130"  onmouseover="document.getElementById('info-box').innerHTML=' Click 1x'"
+                    onmouseout="document.getElementById('info-box').innerHTML='Pada gambar pertama menunjukan Bar ketika di click 1x'"
+                    onclick="alert('bayik kecill')">
+                <img src="russel.png" alt="George Russell" width="130" height="130" onmouseover="document.getElementById('info-box').innerHTML=' Click 2x'"
+                    onmouseout="document.getElementById('info-box').innerHTML='Pada gambar kedua menunjukan Bar ketika di click 2x'"
+                    ondblclick="alert('hai gantenk')">
+                <img src="lando.png" alt="Lando Norris" width="130" height="130" onmouseover="this.style.opacity='0.6'; document.getElementById('info-box').innerHTML='Arahkan cursor untuk merubah opacity gambar'"
+                    onmouseout="this.style.opacity='1'; document.getElementById('info-box').innerHTML='Pada gambar ketiga menunjukan perubahan opacity gambar'"
+                    onclick="document.getElementById('info-box').innerHTML=' Lando Norris diklik'">
+                <img src="max.png" alt="Max Verstappen" width="130" height="130" onmouseover="this.style.border='4px solid red'; document.getElementById('info-box').innerHTML=' Arahkan cursor pada gambar ke empat untuk merubah border pada gambar'"
+                    onmouseout="this.style.border='2px solid #000000    '; document.getElementById('info-box').innerHTML='Pada gambar ke empat menunjukan perubahan warna border yang berwarna merah'"
+                    oncontextmenu="alert('Klik kanan tidak diizinkan!'); return false;">
+                <img src="lewis.png" alt="Lewis Hamilton" width="130" height="130"  onmouseover="document.getElementById('info-box').innerHTML='Tahan Click untuk merubah navigator pada kolom ini'"
+                    onmouseout="document.getElementById('info-box').innerHTML='Pada gambar ke 5 ketika di tekan akan merubah warna symbol dan ketika di lepas juga akan berubah'"
+                    onmousedown="document.getElementById('info-box').innerHTML='🔴 Mouse ditekan Lewis Hamilton'"
+                    onmouseup="document.getElementById('info-box').innerHTML='🟢 Mouse dilepas Lewis Hamilton'">
+                <img src="charles.png" alt="Charles Leclerc" width="130" height="130" onmouseover="document.getElementById('info-box').innerHTML='click untuk memutar gambar'"
+                    onmouseout="document.getElementById('info-box').innerHTML='Pada gambar ke enam ini ketika di click akan berputar'"
+                    onclick="this.style.transform='rotate(180deg)'; document.getElementById('info-box').innerHTML=' Charles Leclerc diputar'">
+            </div>
+        </article>
+    </section>
+    <footer><p>copyright@reva466 2026</p></footer>
+</body>
+</html>
