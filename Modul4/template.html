@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website CSS</title>
+    <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #wrapper {
+            width: 700px;
+            margin: 20px auto;
+            border: 1px solid #999;
+            background-color: #fff;
+        }
+
+        #header {
+            background-color: blue;
+            color: white;
+            padding: 15px 20px;
+        }
+        #header h1 {
+            font-size: 28px;
+            color: yellow;
+        }
+        #header p {
+            font-size: 13px;
+            color: white;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #nav {
+            width: 180px;
+            border: 2px dashed #555;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+        #nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        #nav ul li {
+            padding: 5px 0;
+        }
+        #nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+        }
+        #nav ul li a:hover {
+            text-decoration: underline;
+            color: blue;
+            font-weight: bold;
+        }
+        #nav ul li a.active {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Label annotations */
+        .nav-label {
+            font-size: 11px;
+            color: #888;
+            margin-left: 6px;
+        }
+
+        #divider {
+            width: 2px;
+            background-color: #ccc;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            min-height: 300px;
+        }
+
+        .halaman { display: none; }
+        .halaman.active { display: block; }
+
+        #footer {
+            background-color: #ddd;
+            text-align: right;
+            padding: 10px 20px;
+            font-size: 13px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="header">
+            <h1>Halo CSS !</h1>
+            <p>Ini adalah website CSS saya</p>
+        </div>
+
+        <div id="main">
+
+            <div id="nav">
+                <ul>
+                    <li><a href="#" class="nav-link" onclick="tampil('Home', this)">Menu 1</a></li>
+                    <li><a href="#" class="nav-link" onclick="tampil('menu1', this)">Menu 2</a></li>
+                    <li><a href="#" class="nav-link" onclick="tampil('menu2', this)">Menu 3</a></li>
+                    <li><a href="#" class="nav-link" onclick="tampil('menu3', this)">Menu 4</a></li>
+                    <li>
+                        <a href="#" class="nav-link" onclick="tampil('menu4', this)">Menu 5</a>
+                        <span class="nav-label">Link default</span>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link active" onclick="tampil('menu5', this)">Menu 6</a>
+                        <span class="nav-label">Link hover</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="divider"></div>
+
+            <div id="content">
+                <!-- Home / halaman utama -->
+                <div id="Home" class="halaman">
+                    <img src="https://upload.wikimedia.org/wikipedia/id/5/5f/Politeknik_Negeri_Madiun.png" alt="Logo PNM">
+                </div>
+
+                <!-- Menu 6 jadi active di tampilan awal -->
+                <div id="menu5" class="halaman active" style="text-align:center; padding-top:10px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/id/5/5f/Politeknik_Negeri_Madiun.png"
+                         alt="Logo PNM" style="width:110px; height:auto; display:block; margin:0 auto 8px auto;">
+                    <p style="font-size:16px; font-weight:bold; margin-bottom:6px;">TI</p>
+                    <p style="font-size:16px; font-weight:bold; margin-bottom:10px;">Politeknik Negeri Madiun</p>
+                    <p style="color:red; font-size:13px; max-width:340px; margin:0 auto; line-height:1.6;">
+                        Mewujudkan pendidikan tinggi vokasi dalam bidang
+                        Teknologi Informasi dan penerapannya yang berkualitas,
+                        inovatif dan berdaya saing Nasional.
+                    </p>
+                </div>
+
+                <div id="menu1" class="halaman">
+                    <h3>Menu 1 — Simple Selector</h3><br>
+                    <p style="text-align:center; color:aqua; border:2px solid aqua; background:#e0fafa; padding:10px; margin-bottom:8px;">
+                        Penggunaan CSS sangat membantu web desainer dalam menyusun halaman yang konsisten.
+                    </p>
+                    <p style="text-align:left; color:red; border:2px solid red; background:#ffe0e0; padding:10px; margin-bottom:8px;">
+                        Dalam penulisan CSS sangat sederhana namun powerful dalam desain.
+                    </p>
+                    <p style="text-align:center; color:darkmagenta; border:2px solid darkmagenta; background:#777; padding:10px;">
+                        Ini adalah hasil selector dengan elemen p dengan class tengah.
+                    </p>
+                </div>
+
+                <div id="menu2" class="halaman">
+                    <h3>Menu 2 — Combinator Selector</h3><br>
+                    <style>
+                        #menu2 .demo div p   { color: red; }
+                        #menu2 .demo div > p { background-color: yellow; }
+                        #menu2 .demo div + p { background-color: darkgray; color: white; }
+                        #menu2 .demo div ~ p { color: cyan; }
+                        #menu2 .demo p { padding: 6px 10px; margin-bottom: 5px; border: 1px solid #bbb; }
+                    </style>
+                    <div class="demo">
+                        <div>
+                            <p>Paragraf di dalam div — descendant (merah) + child (kuning).</p>
+                            <p>Paragraf kedua di dalam div — descendant + child juga berlaku.</p>
+                        </div>
+                        <p>Paragraf tepat setelah div — adjacent sibling (darkgray) + general sibling (cyan).</p>
+                        <p>Paragraf berikutnya — hanya general sibling (cyan).</p>
+                    </div>
+                </div>
+
+                <div id="menu3" class="halaman">
+                    <h3>Menu 3 — Pseudo-class</h3><br>
+                    <style>
+                        #menu3 .hover-box { background:#eee; padding:14px; cursor:default; margin-bottom:14px; }
+                        #menu3 .hover-box p { display:none; background:darkgray; color:white; padding:10px; margin-top:8px; }
+                        #menu3 .hover-box:hover p { display:block; }
+                        #menu3 a.link-demo { display:inline-block; padding:4px 10px; }
+                        #menu3 a.link-demo:link    { text-decoration:none; background:#FF9933; color:#fff; }
+                        #menu3 a.link-demo:visited { color:purple; }
+                        #menu3 a.link-demo:hover   { font-weight:bold; text-transform:uppercase; text-decoration:underline overline; color:#000; background:#CCFF00; }
+                        #menu3 a.link-demo:active  { color:#660000; }
+                    </style>
+                    <div class="hover-box">
+                        Letakkan kursor disini untuk melihat elemen p
+                        <p>element p</p>
+                    </div>
+                    <a href="#" class="link-demo">Arahkan mouse ke sini</a>
+                </div>
+
+                <div id="menu4" class="halaman">
+                    <h3>Menu 4 — Pseudo-element</h3><br>
+                    <style>
+                        #menu4 .demo p::first-line { background-color: red; color: white; }
+                        #menu4 .demo p { line-height: 1.8; padding: 8px; border: 1px solid #ccc; }
+                    </style>
+                    <div class="demo">
+                        <p>
+                            Hujan turun sejak sore hari.
+                            Rintik-rintiknya mulai membasahi dedaunan di halaman rumah.
+                            Aroma khas tanah basah tercium segar, bercampur dengan suara gemericik air yang mengalir di selokan.
+                            Dari balik jendela, saya menikmati pemandangan ini sambil memegang secangkir cokelat hangat.
+                            Udara dingin langsung terasa begitu menyelimuti kulit. Sesekali, kilat menyambar terang, diikuti suara guntur yang menggelegar di kejauhan.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="menu6" class="halaman">
+                    <h3>Menu 6 — Margin &amp; Padding</h3><br>
+                    <style>
+                        #menu6 .margin-box {
+                            border: 1px solid black;
+                            margin: 40px 50px 60px 30px;
+                            background-color: lightblue;
+                            padding: 8px;
+                            font-size: 13px;
+                            margin-bottom: 20px;
+                        }
+                        #menu6 .padding-box {
+                            border: 1px solid black;
+                            padding: 40px;
+                            background-color: lightgreen;
+                            font-size: 13px;
+                        }
+                        #menu6 h4 { margin-bottom: 6px; font-size: 13px; color: #555; }
+                    </style>
+                    <h4>Margin — atas:40px kanan:50px bawah:60px kiri:30px</h4>
+                    <div class="margin-box">
+                        Elemen ini memiliki margin atas 40px, kanan 50px, bawah 60px, dan kiri 30px.
+                    </div>
+                    <h4>Padding — semua sisi: 40px</h4>
+                    <div class="padding-box">
+                        Elemen ini memiliki padding atas, kanan, bawah, dan kiri masing-masing 40px.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            Reva Adinta Nasyiah | 253307010 | TI-2A
+        </div>
+
+    </div>
+
+    <script>
+        function tampil(id, el) {
+            document.querySelectorAll('.halaman').forEach(h => h.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo-class Selector</title>
+    <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+    <style>
+        p {
+            display: none;
+            background-color: darkgray;
+            padding: 20px;
+        }
+        div:hover p { 
+            display: block;
+        }
+
+        a:link {
+            color: blue;
+            text-decoration: none;
+        }
+        a:visited {
+            color: purple;
+        }
+        a:hover {
+            color: red;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        a:active {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pseudo-class Selector</h2>
+
+    <h3>Hover pada DIV</h3>
+    <div>Letakkan kursor disini untuk melihat div elemet
+        <p>Element P</p>
+    </div>
+
+    <h3>Link dengan Pseudo-class</h3>
+    <p style="display:block; background-color:#f0f0f0; color:#333;">
+        Arahkan mouse ke link di bawah untuk melihat perubahan warna:
+    </p>
+    <a href="#">Ini adalah link, arahkan mouse ke sini</a><br><br>
+    <a href="https://www.youtube.com">Kunjungi YouTube</a>
+</body>
+</html>

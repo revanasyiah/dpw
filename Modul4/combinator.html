@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combinator Selector</title>
+    <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+    <style>
+        div p { 
+            color: red;
+        }
+        div > p { 
+            background-color: yellow;
+        }
+        div + p { 
+            background-color: darkgray;
+        }
+        div ~ p { 
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <h2>Combinator Selector</h2>
+
+    <div>
+        <p>This is a paragraph. <strong>Selektor no 1 (div p)</strong>: paragraf ini berada di dalam div, warnanya merah karena terkena aturan descendant selector. Selektor no 2 (div &gt; p): latar kuning karena merupakan anak langsung div.</p>
+        <p>This is a paragraph. <strong>Selektor no 1 &amp; 2</strong>: paragraf kedua di dalam div juga terkena descendant dan child selector, warna teks merah dan latar kuning.</p>
+    </div>
+    <p>This is a paragraph. <strong>Selektor no 3 (div + p)</strong>: paragraf ini adalah elemen p pertama tepat setelah div, sehingga terkena adjacent sibling selector dengan latar darkgray. Selektor no 4 (div ~ p) juga berlaku, warna cyan.</p>
+    <p>This is a paragraph. <strong>Selektor no 4 (div ~ p)</strong>: paragraf ini adalah saudara div (bukan anak), sehingga hanya terkena general sibling selector, warna teks cyan.</p>
+</body>
+</html>
