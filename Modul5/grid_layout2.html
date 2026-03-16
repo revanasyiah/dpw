@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Belajar grid</title>
+    <link rel="icon" type="img/png" href="gambar/wuwu.png" sizes="16x16"/>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-gap: 50px;
+            background-color: #00ff55;
+            grid-template-columns: auto auto auto auto;
+            padding: 10px;
+        }
+
+        .item1 {
+            grid-row: 1 / 4; 
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        p { font-size: 13px; background: #ffffff; padding: 8px; border-left: 4px solid #2196F3; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <h1>Tampilan:</h1>
+    <div class="grid-container">
+        <div class="item1">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div></div>
+    </div>
+
+    <p><b>Kesimpulan Skenario 1 (grid-row: 1 / 4):</b> Properti <code>grid-row</code> menentukan di baris mana sebuah item dimulai dan berakhir. Nilai <code>1 / 4</code> berarti item dimulai dari garis baris ke-1 dan berakhir di garis baris ke-4, sehingga item tersebut membentang selebar 3 baris. Semakin besar selisih nilainya, semakin banyak baris yang dicakup.</p>
+
+    <p><b>Kesimpulan Skenario 2 (grid-column: 1 / 4):</b> Properti <code>grid-column</code> menentukan di kolom mana item dimulai dan berakhir. Nilai <code>1 / 4</code> membuat item membentang dari kolom pertama hingga kolom keempat (mencakup 3 kolom). Ini berguna untuk membuat elemen seperti header atau banner yang memakan beberapa kolom sekaligus.</p>
+</body>
+</html>

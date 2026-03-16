@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Belajar CSS Grid box</title>
+    <link rel="icon" type="img/png" href="gambar/wuwu.png" sizes="16x16"/>
+    <style>
+        .tempat_grid {
+            display: inline-grid; 
+            grid-template-columns: auto auto auto;
+            background-color: #00ff15;
+            padding: 10px;
+        }
+        .item_grid {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        p { font-size: 13px; background: #f9f9f9; padding: 8px; border-left: 4px solid #2196F3; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <h1>Tampilan inline-grid:</h1>
+    <div class="tempat_grid">
+        <div class="item_grid">1</div>
+        <div class="item_grid">2</div>
+        <div class="item_grid">3</div>
+        <div class="item_grid">4</div>
+        <div class="item_grid">5</div>
+        <div class="item_grid">6</div>
+        <div class="item_grid">7</div>
+        <div class="item_grid">8</div>
+        <div class="item_grid">9</div>
+    </div>
+    <p><b>Kesimpulan Skenario 2 (inline-grid):</b> Berbeda dengan <code>display: grid</code> yang mengambil seluruh lebar halaman, <code>display: inline-grid</code> hanya mengambil lebar sesuai ukuran kontennya. Elemen lain bisa berada di samping container inline-grid ini, mirip seperti perilaku elemen inline.</p>
+</body>
+</html>

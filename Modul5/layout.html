@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout CSS Grid</title>
+    <link rel="icon" type="img/png" href="gambar/wuwu.png" sizes="16x16"/>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .layout-container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "menu   main   right"
+                "menu   footer footer";
+            grid-template-columns: 150px 1fr 150px;
+            grid-template-rows: auto 200px auto;
+            gap: 5px;
+            background-color: #ccc;
+            padding: 5px;
+            min-height: 100vh;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #b0c4de;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .menu {
+            grid-area: menu;
+            background-color: #b0c4de;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #b0c4de;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .right {
+            grid-area: right;
+            background-color: #b0c4de;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #b0c4de;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-container">
+        <div class="header">Header</div>
+        <div class="menu">Menu</div>
+        <div class="main">Main</div>
+        <div class="right">Right</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
