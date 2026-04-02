@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="img/png" href="wuwu.png" sizes="16x16"/>
+  <title> Reva Adinta | Portofolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--sage:#8FAF8A;--sage-light:#B5CEB0;--sage-pale:#D9EAD4;--sage-bg:#EEF5EB;--sage-cream:#F7FAF5;--sage-dark:#4E6B4A;--sage-deep:#3A5236;--blush:#F2D9D0;--butter:#F5EFD0;--sky:#D4E8F0;--lavender:#E0D4F0;--text:#3D4A3A;--text-mid:#6B7D67;--text-soft:#9AAA96;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Nunito',sans-serif;background:var(--sage-cream);color:var(--text);overflow-x:hidden;}
+    h1,h2,h3,h4,h5{font-family:'Lora',serif;}
+    .navbar{background:rgba(247,250,245,0.94);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--sage-pale);padding:0.9rem 0;position:sticky;top:0;z-index:1000;}
+    .navbar-brand{font-family:'Lora',serif;font-size:1.3rem;color:var(--sage-dark)!important;font-weight:600;display:flex;align-items:center;gap:0.5rem;}
+    .nav-link{color:var(--text-mid)!important;font-size:0.88rem;font-weight:700;margin:0 0.3rem;padding:0.4rem 0.9rem!important;border-radius:50px;transition:all 0.25s;}
+    .nav-link:hover{background:var(--sage-bg);color:var(--sage-dark)!important;}
+    .nav-link.active{background:var(--sage);color:#fff!important;}
+    .navbar-toggler{border:1.5px solid var(--sage-light);border-radius:10px;padding:0.35rem 0.55rem;}
+    .navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%238FAF8A' stroke-linecap='round' stroke-width='2.2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+    .page-hero{padding:4.5rem 0 3.5rem;background:var(--sage-bg);border-bottom:1.5px solid var(--sage-pale);}
+    .breadcrumb-item a{color:var(--sage-dark);text-decoration:none;font-size:0.83rem;font-weight:700;}
+    .breadcrumb-item.active{color:var(--text-soft);font-size:0.83rem;}
+    .sec-tag{display:inline-flex;align-items:center;gap:0.4rem;background:var(--sage-pale);color:var(--sage-dark);font-size:0.74rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:0.35rem 0.9rem;border-radius:50px;margin-bottom:0.9rem;}
+    .page-title{font-size:clamp(2rem,5vw,3.2rem);color:var(--text);line-height:1.25;}
+    section{padding:5rem 0;}
+    .sec-title{font-size:clamp(1.55rem,3vw,2.3rem);color:var(--text);margin-bottom:1rem;line-height:1.3;}
+    .sec-sub{font-size:0.93rem;color:var(--text-mid);line-height:1.82;font-weight:400;}
+
+    /* STATS */
+    .stat-box{background:#fff;border:2px solid var(--sage-pale);border-radius:20px;padding:1.5rem;text-align:center;}
+    .stat-num{font-family:'Lora',serif;font-size:2rem;color:var(--sage-dark);display:block;font-weight:600;line-height:1;}
+    .stat-lbl{font-size:0.78rem;color:var(--text-soft);font-weight:700;margin-top:0.3rem;}
+
+    /* FILTER */
+    .filter-btn{background:transparent;border:2px solid var(--sage-pale);color:var(--text-mid);font-size:0.82rem;font-weight:700;padding:0.45rem 1.2rem;border-radius:50px;cursor:pointer;transition:all 0.25s;font-family:'Nunito',sans-serif;}
+    .filter-btn:hover{border-color:var(--sage-light);color:var(--sage-dark);}
+    .filter-btn.active{background:var(--sage);border-color:var(--sage);color:#fff;}
+
+    /* PORTO CARDS */
+    .porto-card{background:#fff;border:2px solid var(--sage-pale);border-radius:24px;overflow:hidden;transition:all 0.3s;}
+    .porto-card:hover{transform:translateY(-6px);box-shadow:0 14px 35px rgba(143,175,138,0.2);border-color:var(--sage-light);}
+    .porto-img{height:210px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden;}
+    .p-c1{background:linear-gradient(135deg,var(--sage-pale),var(--sage-bg));}
+    .p-c2{background:linear-gradient(135deg,var(--blush),#faeae2);}
+    .p-c3{background:linear-gradient(135deg,var(--butter),#f8f2df);}
+    .p-c4{background:linear-gradient(135deg,var(--sky),#e0f2ff);}
+    .p-c5{background:linear-gradient(135deg,var(--lavender),#ede8f5);}
+    .p-c6{background:linear-gradient(135deg,#fde8d0,#fff3e8);}
+    .porto-overlay{position:absolute;inset:0;background:rgba(78,107,74,0.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;}
+    .porto-card:hover .porto-overlay{opacity:1;}
+    .ov-btn{width:42px;height:42px;background:rgba(255,255,255,0.2);border:1.5px solid rgba(255,255,255,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;text-decoration:none;transition:all 0.25s;margin:0 0.3rem;}
+    .ov-btn:hover{background:#fff;color:var(--sage-dark);}
+    .porto-body{padding:1.2rem 1.4rem;}
+    .p-tag{font-size:0.69rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--sage);margin-bottom:0.35rem;}
+    .porto-body h5{font-family:'Lora',serif;font-size:0.97rem;color:var(--text);margin-bottom:0.35rem;}
+    .porto-body p{font-size:0.82rem;color:var(--text-soft);margin:0;line-height:1.65;}
+    .p-chips{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.75rem;}
+    .p-chip{font-size:0.68rem;font-weight:700;color:var(--sage-dark);background:var(--sage-pale);padding:0.22rem 0.7rem;border-radius:50px;}
+
+    /* CTA */
+    .cta-band{background:linear-gradient(135deg,var(--sage),var(--sage-dark));padding:4rem 0;text-align:center;}
+    .cta-band h2{color:#fff;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:0.8rem;}
+    .cta-band p{color:rgba(255,255,255,0.8);font-size:0.92rem;max-width:420px;margin:0 auto 1.8rem;line-height:1.8;}
+    .btn-white{background:#fff;color:var(--sage-dark);border:none;padding:0.78rem 2rem;font-size:0.88rem;font-weight:800;border-radius:50px;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.3s;font-family:'Nunito',sans-serif;}
+    .btn-white:hover{background:var(--sage-pale);color:var(--sage-deep);transform:translateY(-2px);}
+
+    footer{background:var(--sage-deep);padding:3.5rem 0 2rem;}
+    .foot-brand{font-family:'Lora',serif;font-size:1.35rem;color:#fff;display:flex;align-items:center;gap:0.45rem;}
+    .foot-desc{font-size:0.84rem;color:rgba(255,255,255,0.45);margin-top:0.5rem;max-width:230px;line-height:1.7;}
+    .foot-heading{font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--sage-light);margin-bottom:0.9rem;}
+    .foot-link{display:block;font-size:0.86rem;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:0.5rem;transition:color 0.25s;}
+    .foot-link:hover{color:var(--sage-light);}
+    .foot-copy{font-size:0.78rem;color:rgba(255,255,255,0.28);}
+    .soc-btn { width:36px;height:36px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.92rem;transition:all 0.25s;margin-right:0.35rem; }
+    .soc-btn:hover { background:var(--sage);border-color:var(--sage);color:#fff; }
+
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Reva Adinta</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="nav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="portofolio.html">Portofolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="layanan.html">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb"><ol class="breadcrumb mb-3"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">Portofolio</li></ol></nav>
+      <span class="sec-tag"> Karya Saya</span>
+      <h1 class="page-title">Portofolio</h1>
+      <p class="sec-sub mt-2" style="max-width:500px;">Ini hasil kerja keras saya selama belajar. Masih jauh dari sempurna, tapi saya bangga dengan setiap satu dari ini! </p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section style="background:var(--sage-bg);padding:3rem 0;">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-6 col-lg-3 fade-up"><div class="stat-box"><span class="stat-num">8+</span><div class="stat-lbl">Proyek Selesai</div></div></div>
+        <div class="col-6 col-lg-3 fade-up d1"><div class="stat-box"><span class="stat-num">3</span><div class="stat-lbl">Bulan Belajar</div></div></div>
+        <div class="col-6 col-lg-3 fade-up d2"><div class="stat-box"><span class="stat-num">5</span><div class="stat-lbl">Teknologi Dipelajari</div></div></div>
+        <div class="col-6 col-lg-3 fade-up d3"><div class="stat-box"><span class="stat-num">∞</span><div class="stat-lbl">Semangat Belajar</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="d-flex flex-wrap gap-2 mb-4 fade-up">
+        <button class="filter-btn active" data-f="all">Semua</button>
+        <button class="filter-btn" data-f="web">Website</button>
+        <button class="filter-btn" data-f="design">Desain</button>
+        <button class="filter-btn" data-f="figma">Figma</button>
+        <button class="filter-btn" data-f="other">Lainnya</button>
+      </div>
+      <div class="row g-4" id="grid">
+        <div class="col-md-6 col-lg-4 fade-up item" data-c="web">
+          <div class="porto-card"><div class="porto-img p-c1">🌿<div class="porto-overlay"><a href="#" class="ov-btn"><i class="bi bi-eye"></i></a></div></div>
+          <div class="porto-body"><div class="p-tag">HTML & CSS</div><h5>Landing Page Kafe</h5><p>Latihan membuat halaman depan kafe dengan Bootstrap grid & layout responsif.</p><div class="p-chips"><span class="p-chip">HTML</span><span class="p-chip">CSS</span><span class="p-chip">Bootstrap</span></div></div></div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up d1 item" data-c="design">
+          <div class="porto-card"><div class="porto-img p-c2">🎨<div class="porto-overlay"><a href="#" class="ov-btn"><i class="bi bi-eye"></i></a></div></div>
+          <div class="porto-body"><div class="p-tag">Canva Design</div><h5>Feed Instagram UMKM</h5><p>Desain konten sosial media untuk teman yang punya usaha kue rumahan.</p><div class="p-chips"><span class="p-chip">Canva</span><span class="p-chip">Social Media</span></div></div></div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up d2 item" data-c="figma">
+          <div class="porto-card"><div class="porto-img p-c3">📱<div class="porto-overlay"><a href="#" class="ov-btn"><i class="bi bi-eye"></i></a></div></div>
+          <div class="porto-body"><div class="p-tag">Figma</div><h5>Wireframe Aplikasi To-Do</h5><p>Sketsa UI aplikasi pencatat tugas — proyek pertama saya di Figma! Masih sederhana. </p><div class="p-chips"><span class="p-chip">Figma</span><span class="p-chip">Wireframe</span></div></div></div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up item" data-c="web">
+          <div class="porto-card"><div class="porto-img p-c4">🛍️<div class="porto-overlay"><a href="#" class="ov-btn"><i class="bi bi-eye"></i></a></div></div>
+          <div class="porto-body"><div class="p-tag">HTML & CSS</div><h5>Halaman Toko Online Sederhana</h5><p>Latihan membuat tampilan toko online mini pakai CSS Grid dan Flexbox.</p><div class="p-chips"><span class="p-chip">HTML</span><span class="p-chip">CSS Grid</span></div></div></div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up d1 item" data-c="design">
+          <div class="porto-card"><div class="porto-img p-c5">🎓<div class="porto-overlay"><a href="#" class="ov-btn"><i class="bi bi-eye"></i></a></div></div>
+          <div class="porto-body"><div class="p-tag">Canva Design</div><h5>Slide Presentasi Akademik</h5><p>Template slide presentasi kreatif untuk tugas kuliah teman-teman.</p><div class="p-chips"><span class="p-chip">Canva</span><span class="p-chip">Presentasi</span></div></div></div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up d2 item" data-c="other">
+          <div class="porto-card"><div class="porto-img p-c6">🐍<div class="porto-overlay"><a href="#" class="ov-btn"><i class="bi bi-eye"></i></a></div></div>
+          <div class="porto-body"><div class="p-tag">Python</div><h5>Kalkulator Sederhana</h5><p>Program Python pertama saya — kalkulator dasar dengan empat operasi aritmatika.</p><div class="p-chips"><span class="p-chip">Python</span><span class="p-chip">Coding</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container fade-up">
+      <span class="sec-tag" style="background:rgba(255,255,255,0.15);color:#fff;margin-bottom:1rem;"> Mau Kerjasama?</span>
+      <h2>Punya Proyek yang Mau Dikerjakan Bareng?</h2>
+      <p>Saya masih belajar, tapi saya siap membantu dengan sepenuh hati! Yuk ngobrol dulu. </p>
+      <a href="contact.html" class="btn-white"><i class="bi bi-chat-dots"></i> Hubungi Saya</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="foot-brand">Reva Adinta</div>
+          <p class="foot-desc">Portfolio pemula yang sedang belajar — satu hari satu langkah ke depan.</p>
+          <div class="mt-3">
+            <a href="#" class="soc-btn"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="soc-btn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="soc-btn"><i class="bi bi-github"></i></a>        
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-1">
+          <div class="foot-heading">Halaman</div>
+          <a href="index.html" class="foot-link">Home</a>
+          <a href="about.html" class="foot-link">About</a>
+          <a href="portofolio.html" class="foot-link">Portofolio</a>
+          <a href="layanan.html" class="foot-link">Layanan</a>
+          <a href="contact.html" class="foot-link">Contact</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="foot-heading">Skill Saya</div>
+          <a href="#" class="foot-link">HTML & CSS</a>
+          <a href="#" class="foot-link">Bootstrap</a>
+          <a href="#" class="foot-link">Canva</a>
+          <a href="#" class="foot-link">Figma</a>
+        </div>
+        <div class="col-lg-3">
+          <div class="foot-heading">Kontak</div>
+          <p style="font-size:0.84rem;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;"><i class="bi bi-envelope me-2" style="color:var(--sage-light)"></i>reva.adinta@gmail.com</p>
+          <p style="font-size:0.84rem;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;"><i class="bi bi-telephone me-2" style="color:var(--sage-light)"></i>+62 813 3574 2599</p>
+          <p style="font-size:0.84rem;color:rgba(255,255,255,0.45);"><i class="bi bi-geo-alt me-2" style="color:var(--sage-light)"></i>Madiun, Jawa Timur</p>
+        </div>
+      </div>
+      <hr style="border-color:rgba(255,255,255,0.08);margin:2rem 0 1.5rem"/>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <span class="foot-copy">© 2026 Reva Adinta ·</span>      
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        this.classList.add('active');
+        const f = this.dataset.f;
+        document.querySelectorAll('.item').forEach(item => {
+          item.style.display = (f==='all'||item.dataset.c===f) ? 'block' : 'none';
+        });
+      });
+    });
+    const obs=new IntersectionObserver((e)=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('visible'),i*80)}),{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
