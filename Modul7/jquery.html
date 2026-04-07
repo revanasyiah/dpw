@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu jQuery</title>
+
+<!--  jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+:root {
+  --bg: #000;
+  --card: #111;
+  --border: #333;
+  --accent: #e8ff5a;
+  --accent2: #00ffff;
+  --text: #fff;
+  --muted: #aaa;
+  --radius: 12px;
+}
+
+body {
+  background: var(--bg);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: var(--text);
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-num {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* MENU */
+#jquery-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: #1a1a1a;
+  transition: 0.2s;
+}
+
+.menu-item:hover {
+  border-color: var(--accent2);
+}
+
+.menu-item.active {
+  background: var(--accent2);
+  color: #000;
+  font-weight: bold;
+}
+
+/* CONTENT */
+#menu-content {
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid var(--accent2);
+  border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">9</div>
+    <h2>Menu dengan jQuery</h2>
+  </div>
+
+  <div class="card-body">
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:14px;">
+      Navigasi tab interaktif dengan jQuery
+    </p>
+
+    <div id="jquery-nav">
+      <div class="menu-item active" data-content="🏠 Selamat datang di halaman <strong>Beranda</strong>! Ini adalah halaman utama website kami.">Beranda</div>
+      <div class="menu-item" data-content="📋 Halaman <strong>Profil</strong>: Informasi tentang tim dan misi kami.">Profil</div>
+      <div class="menu-item" data-content="🛒 Halaman <strong>Produk</strong>: Daftar produk unggulan kami tersedia di sini.">Produk</div>
+      <div class="menu-item" data-content="📬 Halaman <strong>Kontak</strong>: Hubungi kami di info@example.com.">Kontak</div>
+    </div>
+
+    <div id="menu-content">
+      🏠 Selamat datang di halaman <strong>Beranda</strong>! Ini adalah halaman utama website kami.
+    </div>
+  </div>
+</div>
+
+<script>
+//  MENU JQUERY
+$(document).ready(function(){
+
+  $('.menu-item').click(function(){
+
+    // Hapus active semua
+    $('.menu-item').removeClass('active');
+
+    // Tambah active ke yang diklik
+    $(this).addClass('active');
+
+    // Ambil isi dari data-content
+    const isi = $(this).attr('data-content');
+
+    // Tampilkan dengan efek fade
+    $('#menu-content').hide().html(isi).fadeIn(300);
+
+  });
+
+});
+</script>
+
+</body>
+</html>

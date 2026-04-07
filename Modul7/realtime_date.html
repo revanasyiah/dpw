@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Jam Real-Time</title>
+
+<style>
+  :root {
+    --card: #e42727;
+    --border: #333;
+    --accent: #e8ff5a;
+    --text: #fff;
+    --muted: #aaa;
+    --radius: 12px;
+    --font-mono: monospace;
+  }
+
+  body {
+    background: #000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.3s;
+    width: 350px;
+  }
+
+  .card:hover { border-color: rgba(232,255,90,0.3); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card-num {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    color: #000000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .card-body { padding: 24px; }
+
+  #clock-display {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-align: center;
+  }
+
+  #date-display {
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    margin-top: 10px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">7</div>
+    <h2>Jam Real-Time</h2>
+  </div>
+  <div class="card-body">
+    <div id="clock-display">--:--:--</div>
+    <div id="date-display">Memuat tanggal…</div>
+  </div>
+</div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+
+  const jam = now.toLocaleTimeString('id-ID');
+  const tanggal = now.toLocaleDateString('id-ID', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  document.getElementById("clock-display").textContent = jam;
+  document.getElementById("date-display").textContent = tanggal;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

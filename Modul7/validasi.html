@@ -1,0 +1,30 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Validasi Masukan</TITLE>
+</HEAD>
+
+<BODY>
+    <SCRIPT LANGUAGE="JavaScript">
+        function cekNama(form) {
+            // Mengecek apakah elemen pertama (input teks) kosong 
+            if (form.elements[0].value == "") {
+                alert("Nama harus dimasukkan");
+                form.nama.focus();
+                form.nama.select();
+                return (false);
+            }
+            // Jika terisi, tampilkan pesan terima kasih [cite: 91]
+            alert("Terima kasih, " + form.elements[0].value);
+            return (true);
+        }
+    </SCRIPT>
+
+    <form name="formku">
+        <pre>Nama : <INPUT TYPE = " TEXT" NAME="nama"><br>
+        <input type="BUTTON" value="Kirim" onClick="cekNama(this.form)"><br>
+        </pre>
+    </form>
+</BODY>
+
+</HTML>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery UI Dialog</title>
+
+<!--  jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!--  jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<style>
+:root {
+  --bg: #000;
+  --card: #111;
+  --border: #333;
+  --accent: #e8ff5a;
+  --text: #fff;
+  --muted: #aaa;
+  --radius: 12px;
+}
+
+body {
+  background: var(--bg);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: var(--text);
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-num {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* BUTTON */
+button {
+  padding: 10px 15px;
+  border: none;
+  background: var(--accent);
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">10</div>
+    <h2>Jendela Basic Dialog (jQuery UI)</h2>
+  </div>
+
+  <div class="card-body">
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:14px;">
+      Dialog modal menggunakan <code>$.dialog()</code>
+    </p>
+
+    <button id="btnDialog">▶ Buka Dialog</button>
+
+    <div id="basic-dialog" title="Informasi" style="display:none;">
+      <p>
+        Halo! Ini adalah <strong>Basic Dialog</strong> dari <strong>jQuery UI</strong>.<br><br>
+        Bisa dipindahkan, resize, dan ditutup.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+//  JQUERY UI DIALOG
+$(document).ready(function(){
+
+  $('#btnDialog').click(function(){
+    $('#basic-dialog').dialog({
+      modal: true,
+      width: 400,
+      show: "fade",
+      hide: "fade"
+    });
+  });
+
+});
+</script>
+
+</body>
+</html>

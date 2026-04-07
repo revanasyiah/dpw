@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX & jQuery</title>
+
+<!--  jQuery CDN (WAJIB) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+:root {
+  --bg: #000;
+  --card: #111;
+  --border: #333;
+  --accent: #e8ff5a;
+  --accent2: #00ffff;
+  --text: #fff;
+  --muted: #aaa;
+  --radius: 12px;
+}
+
+body {
+  background: var(--bg);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: var(--text);
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-num {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.info-box {
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* BUTTON */
+button {
+  padding: 10px 15px;
+  border: none;
+  background: var(--accent2);
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* TOGGLE BOX */
+#kotakJQuery {
+  display: none;
+  margin-top: 12px;
+  padding: 15px;
+  border: 1px solid var(--accent2);
+  border-radius: 8px;
+  color: var(--accent2);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-num">8</div>
+    <h2>Uraian AJAX & jQuery + Contoh</h2>
+  </div>
+
+  <div class="card-body">
+    
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>AJAX</h3>
+        <p><strong>Asynchronous JavaScript and XML</strong> — teknik mengambil data dari server tanpa reload halaman.</p>
+      </div>
+
+      <div class="info-box">
+        <h3>jQuery</h3>
+        <p>Library JavaScript untuk mempermudah manipulasi DOM. <em>"Write less, do more."</em></p>
+      </div>
+    </div>
+
+    <p><strong>Contoh kode:</strong></p>
+<pre>
+// Ubah teks
+$('#judul').text('Halo Dunia!');
+
+// Sembunyikan
+$('.kotak').hide();
+
+// AJAX
+$.ajax({
+  url: 'https://api.example.com/data',
+  success: function(data){
+    $('#hasil').html(data);
+  }
+});
+</pre>
+
+    <p><strong>Contoh Toggle:</strong></p>
+    <button id="btnToggle">▶ Toggle Kotak jQuery</button>
+
+    <div id="kotakJQuery">
+       Ini ditampilkan pakai <b>jQuery toggle()</b>
+    </div>
+
+  </div>
+</div>
+
+<script>
+//  JQUERY TOGGLE
+$(document).ready(function(){
+  $('#btnToggle').click(function(){
+    $('#kotakJQuery').slideToggle(300);
+  });
+});
+</script>
+
+</body>
+</html>
