@@ -1,23 +1,24 @@
 <?php
-$t = date("H");
-
+$t = date(format: "H"); // mendapatkan jam dengan format 1-24
+echo "If";
 if ($t < 16) {
-    echo "Selamat siang<br>";
+    echo "Selamat siang!";
 }
 
-// If Else
+$t = date(format: "H"); // mendapatkan jam dengan format 1-24
+echo "<br> If dan Else <br>";
 if ($t < 20) {
-    echo "Selamat sore<br>";
+    echo "selamat siang!";
 } else {
-    echo "Selamat malam<br>";
+    echo "Selamat malam!";
 }
 
-// Nested If
+echo "<br> Nested If <br>";
 if ($t < 12) {
-    echo "Selamat pagi";
+    echo "Selamat Pagi!";
 } elseif ($t < 16) {
-    echo "Selamat sore";
+    echo "Selamat sore!";
 } else {
-    echo "Selamat malam";
+    echo "Selamat Malam!";
 }
 ?>

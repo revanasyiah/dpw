@@ -3,7 +3,7 @@ function writeMsg($nama) {
     echo "Selamat datang $nama <br>";
 }
 
-writeMsg("Ahmad");
+writeMsg("Reva");
 
 function tambah($a, $b) {
     return $a + $b;
